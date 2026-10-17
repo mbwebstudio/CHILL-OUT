@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chill Out · Restaurante en el Puerto de Punta del Este y La Barra</title>
+<meta name="description" content="Chill Out: restaurante frente al mar en el Puerto de Punta del Este y en La Barra. Chivitos, pescados, mariscos, pizzas, desayunos y atardeceres.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Outfit:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF4F7; --surface:#FFFFFF; --ink:#13293D; --muted:#4A6073;
+  --accent:#F07C2A; --accent-ink:#13293D; --soft:#FCD9B8; --line:#D3E0E8;
+  --display:Shrikhand, Georgia, serif; --body:Outfit, system-ui, sans-serif;
+  --r:18px; --max:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:-0.01em}
+h2{font-size:clamp(2rem,4.4vw,3.1rem);margin-bottom:18px;max-width:18ch}
+.section-lead{color:var(--muted);max-width:56ch;margin-bottom:40px}
+section{padding:96px 0}
+svg.i{width:20px;height:20px;flex:none}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .15s,background .15s,color .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{border:2px solid currentColor}
+.stars{color:var(--star, var(--accent));letter-spacing:2px}
+
+header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px}
+.logo{font-family:var(--display);font-weight:400;font-size:1.35rem;text-decoration:none;display:flex;align-items:center;gap:10px;line-height:1.1}
+.logo .mark{width:34px;height:34px;flex:none}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{text-decoration:none;color:var(--muted);font-weight:500}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{padding:10px 18px;font-size:.95rem}
+@media(max-width:860px){.nav ul{display:none}}
+@media(max-width:480px){.nav .btn span{display:none}.logo{font-size:1.1rem}}
+
+.hero{padding:72px 0 96px}
+.hero h1{font-size:clamp(2.6rem,6.6vw,5rem);margin:0 0 22px;max-width:14ch}
+.lead{font-size:1.18rem;color:var(--muted);max-width:44ch;margin-bottom:32px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.rating{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:30px;color:var(--muted);font-size:.95rem}
+.rating b{color:var(--ink)}
+.visual svg{width:100%;height:auto;display:block}
+.hero-split .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero-band{background:var(--soft)}
+.hero-band .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.hero-center .wrap{text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero-center h1{max-width:16ch}
+.hero-center .lead{margin-left:auto;margin-right:auto}
+.hero-center .cta-row,.hero-center .rating{justify-content:center}
+.hero-center .visual{width:min(420px,80%);margin-bottom:28px}
+@media(max-width:860px){.hero-split .wrap,.hero-band .wrap{grid-template-columns:1fr}.hero .visual{max-width:380px}}
+
+.services{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));column-gap:48px;border-top:2px solid var(--ink)}
+.services li{padding:28px 28px 32px 0;border-bottom:1px solid var(--line)}
+.services h3{font-size:1.45rem;margin-bottom:8px}
+.services p{color:var(--muted);max-width:40ch}
+
+.place{background:var(--surface)}
+.place .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.place p{max-width:52ch;margin-bottom:14px}
+.facts{list-style:none;display:grid;gap:14px}
+.facts li{display:flex;gap:16px;align-items:baseline;padding:18px 22px;background:var(--bg);border-radius:var(--r);border:1px solid var(--line)}
+.facts b{font-family:var(--display);font-size:1.6rem;font-weight:400;min-width:4.5ch;color:var(--accent-strong, var(--ink))}
+@media(max-width:860px){.place .wrap{grid-template-columns:1fr}}
+
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:28px}
+.quote{padding-top:22px;border-top:4px solid var(--accent)}
+.quote blockquote{font-size:1.12rem;margin-bottom:14px}
+.quote figcaption{color:var(--muted);font-size:.95rem}
+
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:stretch}
+.info{display:flex;flex-direction:column;gap:22px}
+.info .row{display:flex;gap:14px;align-items:flex-start}
+.info .row a{font-weight:700}
+.hours{border-collapse:collapse;width:100%;max-width:420px}
+.hours caption{text-align:left;font-family:var(--display);font-size:1.4rem;font-weight:400;margin-bottom:10px}
+.hours th,.hours td{text-align:left;padding:9px 0;border-bottom:1px solid var(--line);font-weight:400}
+.hours th{color:var(--muted);width:42%}
+.hours-note{display:flex;gap:10px;color:var(--muted)}
+.map{border-radius:var(--r);overflow:hidden;min-height:400px;border:1px solid var(--line);background:var(--soft)}
+.map iframe{width:100%;height:100%;min-height:400px;border:0;display:block}
+@media(max-width:860px){.contact .wrap{grid-template-columns:1fr}}
+
+.closing{background:var(--accent);color:var(--accent-ink);text-align:center}
+.closing h2{margin:0 auto 14px}
+.closing p{max-width:50ch;margin:0 auto 28px;opacity:.9}
+.closing .btn{background:var(--accent-ink);color:var(--accent)}
+
+footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.float{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#fff;box-shadow:0 10px 24px -8px rgba(0,0,0,.45)}
+.float svg{width:28px;height:28px}
+.hero-band{background:#13293D;color:#EEF4F7}.hero-band .lead,.hero-band .rating{color:#B9CAD8}.hero-band .rating b{color:#fff}.hero-band .visual{--ink:#0B1C2B;--soft:#FCD9B8;--surface:#EEF4F7}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#"><svg class="mark" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="17" fill="var(--accent)"/><path d="M8 20a9 9 0 0 1 18 0z" fill="var(--accent-ink)"/><path d="M6 24h22M10 28h14" stroke="var(--accent-ink)" stroke-width="2" stroke-linecap="round"/></svg><span>Chill Out</span></a>
+    <nav aria-label="Principal"><ul><li><a href="#servicios">Servicios</a></li><li><a href="#lugar">El lugar</a></li><li><a href="#opiniones">Opiniones</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+    <a class="btn btn-main" href="https://wa.me/59893309825?text=Hola%20Chill%20Out%2C%20quisiera%20reservar%20una%20mesa." target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg><span>Reservar</span></a>
+  </div>
+</header>
+<main>
+<section class="hero hero-band"><div class="wrap"><div class="copy">
+      <h1>Comer frente al mar, con el atardecer de fondo</h1>
+      <p class="lead">Dos lugares para disfrutar sin apuro: sobre la rambla del Puerto de Punta del Este y en Ruta 10, La Barra. Desayunos, almuerzos, cenas y tragos.</p>
+      <div class="cta-row">
+        <a class="btn btn-main" href="https://wa.me/59893309825?text=Hola%20Chill%20Out%2C%20quisiera%20reservar%20una%20mesa." target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Reservar por WhatsApp</a>
+        <a class="btn btn-ghost" href="#contacto"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Cómo llegar</a>
+      </div>
+      <p class="rating"><span class="stars" aria-hidden="true">★★★★★</span> <span><b>4,5</b> en Google (2.800+ reseñas)</span></p></div><div class="visual" aria-hidden="true"><svg viewBox="0 0 240 200"><defs><clipPath id="sc"><rect x="6" y="6" width="228" height="188" rx="20"/></clipPath></defs><g clip-path="url(#sc)"><rect x="0" y="0" width="240" height="200" fill="var(--soft)"/><circle cx="120" cy="118" r="46" fill="var(--accent)"/><rect x="0" y="118" width="240" height="90" fill="var(--ink)"/><rect x="70" y="132" width="100" height="4" rx="2" fill="var(--accent)" opacity="0.80"/><rect x="60" y="146" width="120" height="4" rx="2" fill="var(--accent)" opacity="0.62"/><rect x="50" y="160" width="140" height="4" rx="2" fill="var(--accent)" opacity="0.44"/><rect x="40" y="174" width="160" height="4" rx="2" fill="var(--accent)" opacity="0.26"/><path d="M150 112h90v6h-90z" fill="var(--surface)"/><rect x="160" y="118" width="4" height="22" fill="var(--surface)"/><rect x="180" y="118" width="4" height="22" fill="var(--surface)"/><rect x="200" y="118" width="4" height="22" fill="var(--surface)"/><rect x="220" y="118" width="4" height="22" fill="var(--surface)"/><path d="M40 60q8-8 16 0q8-8 16 0" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/><path d="M180 44q6-6 12 0q6-6 12 0" fill="none" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/></g></svg></div></div></section>
+
+<section id="servicios">
+  <div class="wrap">
+    <h2>La carta</h2>
+    <p class="section-lead">Lo que más se pide, según las reseñas de nuestros dos locales.</p>
+    <ul class="services">
+        <li><h3>Chivitos</h3><p>El clásico de la casa, en varias versiones. También hay chivito vegano.</p></li>
+        <li><h3>Pescados y mariscos</h3><p>Rabas, pescado fresco y mariscos frente al mar.</p></li>
+        <li><h3>Pizzas, hamburguesas y tacos</h3><p>La pizza de entrada, la Californication y tacos veggie.</p></li>
+        <li><h3>Desayunos y café</h3><p>Panadería, café y meriendas en el Puerto.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="lugar" class="place">
+  <div class="wrap">
+    <div>
+      <h2>El mejor lugar para ver el atardecer</h2>
+      <p>En el Puerto estamos sobre la rambla, con vista abierta al mar: "vista" y "atardeceres" son las palabras que más se repiten en las reseñas.</p>
+      <p>En La Barra, el ambiente es más relajado, con limonadas y Aperol para acompañar.</p>
+    </div>
+    <ul class="facts">
+      <li><b>2 locales</b><span>Puerto y La Barra</span></li>
+      <li><b>4,5</b><span>en Google, con más de 2.800 reseñas</span></li>
+      <li><b>7 días</b><span>abiertos todos los días en ambos locales</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="opiniones">
+  <div class="wrap">
+    <h2>Lo que dicen en Google</h2>
+    <p class="section-lead">4,5 de puntaje en Google, con 2.800+ reseñas. Algunas de las más recientes:</p>
+    <div class="quotes">
+        <figure class="quote"><blockquote>“Excelente lugar, una ubicación privilegiada, sobre la rambla, excelentes vistas. El servicio muy bueno, siempre atentos. Muy bien servida la comida, fresca. Súper rica.”</blockquote><figcaption>Heber G. <span class="stars" aria-label="5 estrellas">★★★★★</span></figcaption></figure>
+        <figure class="quote"><blockquote>“Un lugar al que siempre volvemos y nunca falla! Ideal para ir con la familia a disfrutar una linda noche o también para desayunar!! La vista es simplemente hermosa.”</blockquote><figcaption>Antonella L. <span class="stars" aria-label="5 estrellas">★★★★★</span></figcaption></figure>
+        <figure class="quote"><blockquote>“La ambientación muy bonita. La comida riquísima y la atención rápida y genial, todos muy buena onda. Pedimos rabas, 2 variedades de chivitos y tacos veggie.”</blockquote><figcaption>Valeria G. <span class="stars" aria-label="5 estrellas">★★★★★</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact" style="padding-top:0">
+
+  <div class="wrap">
+    <div class="info">
+      <h2>Chill Out Puerto</h2>
+      <div class="row"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div>Juan Díaz de Solís, Puerto de Punta del Este<br><a href="https://www.google.com/maps/place/Chill+Out+Puerto/data=!4m2!3m1!1s0x95750589d7ce8245:0x1b39c4fc97f068e2" target="_blank" rel="noopener">Abrir en Google Maps</a></div></div>
+      <div class="row"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><a href="tel:+59893309825">093 309 825</a> o <a href="https://wa.me/59893309825?text=Hola%20Chill%20Out%2C%20quisiera%20reservar%20una%20mesa." target="_blank" rel="noopener">WhatsApp</a></div></div>
+      
+      <table class="hours"><caption>Horarios</caption><tr><th scope="row">Lunes</th><td>11:00 a 20:00</td></tr><tr><th scope="row">Martes</th><td>11:00 a 19:00</td></tr><tr><th scope="row">Miércoles</th><td>11:00 a 19:00</td></tr><tr><th scope="row">Jueves</th><td>11:00 a 19:00</td></tr><tr><th scope="row">Viernes</th><td>10:00 a 23:30</td></tr><tr><th scope="row">Sábado</th><td>10:00 a 23:30</td></tr><tr><th scope="row">Domingo</th><td>10:00 a 23:30</td></tr></table>
+    </div>
+    <div class="map"><iframe loading="lazy" title="Mapa de Chill Out Puerto" src="https://www.google.com/maps?q=-34.9647547%2C-54.9534265&output=embed"></iframe></div>
+  </div>
+
+  <div class="wrap" style="margin-top:72px">
+    <div class="info">
+      <h2>Chill Out La Barra</h2>
+      <div class="row"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><div>Ruta 10, La Barra<br><a href="https://www.google.com/maps/place/Chill+Out+La+Barra/data=!4m2!3m1!1s0x9575034560fb9d3f:0x1c4760fb51c94ec2" target="_blank" rel="noopener">Abrir en Google Maps</a></div></div>
+      <div class="row"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><div><a href="tel:+59893593452">093 593 452</a> o <a href="https://wa.me/59893593452?text=Hola%20Chill%20Out%2C%20quisiera%20reservar%20una%20mesa." target="_blank" rel="noopener">WhatsApp</a></div></div>
+      
+      <table class="hours"><caption>Horarios</caption><tr><th scope="row">Lunes</th><td>11:00 a 17:00 y 19:00 a 24:00</td></tr><tr><th scope="row">Martes</th><td>11:00 a 17:00 y 19:00 a 24:00</td></tr><tr><th scope="row">Miércoles</th><td>11:00 a 17:00 y 19:00 a 24:00</td></tr><tr><th scope="row">Jueves</th><td>11:00 a 17:00 y 19:00 a 24:00</td></tr><tr><th scope="row">Viernes</th><td>11:00 a 17:00 y 19:00 a 24:00</td></tr><tr><th scope="row">Sábado</th><td>11:00 a 17:00 y 19:00 a 24:00</td></tr><tr><th scope="row">Domingo</th><td>11:00 a 17:00 y 19:00 a 24:00</td></tr></table>
+    </div>
+    <div class="map"><iframe loading="lazy" title="Mapa de Chill Out La Barra" src="https://www.google.com/maps?q=-34.9148837%2C-54.8605876&output=embed"></iframe></div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <h2>¿Mesa para el atardecer?</h2>
+    <p>Escribinos y te guardamos lugar en el Puerto o en La Barra.</p>
+    <a class="btn" href="https://wa.me/59893309825?text=Hola%20Chill%20Out%2C%20quisiera%20reservar%20una%20mesa." target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>Reservar por WhatsApp</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Chill Out, Punta del Este y La Barra</span>
+    <span>Juan Díaz de Solís, Puerto de Punta del Este / Ruta 10, La Barra</span>
+  </div>
+</footer>
+<a class="float" href="https://wa.me/59893309825?text=Hola%20Chill%20Out%2C%20quisiera%20reservar%20una%20mesa." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="i" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3 2.4 1 2.9.8 3.4.7.5-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></a>
+</body>
+</html>
