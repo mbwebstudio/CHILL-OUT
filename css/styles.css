@@ -1,0 +1,156 @@
+/* Chill Out Resto — black and white like the logo; the sunset photos bring the color. */
+:root {
+  --black: #000;
+  --white: #fff;
+  --gray: #5f5f5f;
+  --gray-light: #b8b8b8;
+  --line: #e6e6e6;
+  --paper: #f6f6f4;
+  --open: #2f9e44;
+  --closed: #c92a2a;
+  --font: "Ubuntu", "Segoe UI", system-ui, sans-serif;
+  --max: 1160px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--black); background: var(--white); font-size: 1.0625rem; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--black); outline-offset: 3px; }
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+h1, h2, h3 { font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; }
+h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); margin-bottom: 18px; max-width: 16ch; }
+section { padding: 104px 0; }
+.section-lead { color: var(--gray); max-width: 58ch; margin-bottom: 48px; }
+
+/* The spaced capitals from "R E S T O" in the logo */
+.spaced { text-transform: uppercase; letter-spacing: 0.42em; font-weight: 500; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; border-radius: 999px; font-weight: 500; font-size: 1rem; text-decoration: none; border: 2px solid transparent; transition: background .15s, color .15s; }
+.btn-dark { background: var(--black); color: var(--white); }
+.btn-dark:hover { background: #2b2b2b; }
+.btn-line { border-color: var(--black); }
+.btn-line:hover { background: var(--black); color: var(--white); }
+.btn-light { background: var(--white); color: var(--black); }
+.btn-line-light { border-color: var(--white); color: var(--white); }
+.btn-line-light:hover { background: var(--white); color: var(--black); }
+
+/* Header */
+.header { position: sticky; top: 0; z-index: 50; background: rgba(255, 255, 255, .94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.header-logo img { height: 56px; width: auto; }
+.nav { display: flex; align-items: center; gap: 30px; }
+.nav a:not(.btn) { text-decoration: none; font-weight: 500; color: var(--gray); }
+.nav a:not(.btn):hover { color: var(--black); }
+.nav .btn { padding: 10px 20px; }
+.nav-toggle { display: none; width: 44px; height: 44px; border: 0; background: none; cursor: pointer; position: relative; }
+.nav-toggle span { position: absolute; left: 10px; right: 10px; height: 2px; background: var(--black); transition: transform .2s; }
+.nav-toggle span:first-child { top: 17px; }
+.nav-toggle span:last-child { top: 26px; }
+.nav-toggle[aria-expanded="true"] span:first-child { transform: translateY(4.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:last-child { transform: translateY(-4.5px) rotate(-45deg); }
+@media (max-width: 760px) {
+  .nav-toggle { display: block; }
+  .nav { position: absolute; top: 76px; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--white); border-bottom: 1px solid var(--line); padding: 8px 20px 20px; display: none; }
+  .nav.open { display: flex; }
+  .nav a:not(.btn) { padding: 14px 0; border-bottom: 1px solid var(--line); color: var(--black); }
+  .nav .btn { margin-top: 14px; }
+}
+
+/* Hero */
+.hero { padding: 64px 0 96px; overflow: hidden; }
+.hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.hero h1 { font-size: clamp(2.6rem, 6vw, 4.8rem); margin-bottom: 22px; max-width: 13ch; }
+.lead { font-size: 1.15rem; color: var(--gray); max-width: 46ch; margin-bottom: 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-circle { margin: 0; justify-self: end; width: min(100%, 540px); aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: var(--black); }
+.hero-circle img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 860px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-circle { justify-self: center; width: min(86%, 420px); order: -1; }
+}
+
+/* Open-now status */
+.status-list { list-style: none; display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 32px; font-size: .95rem; color: var(--gray); }
+.status-list b { color: var(--black); font-weight: 500; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: var(--gray-light); margin-right: 8px; vertical-align: middle; }
+.is-open .dot { background: var(--open); }
+.is-closed .dot { background: var(--closed); }
+
+/* Locations */
+.locales { background: var(--paper); }
+.locales-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 40px; }
+.local { background: var(--white); border-radius: 28px; overflow: hidden; display: flex; flex-direction: column; }
+.local-foto { width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.local[data-local="puerto"] .local-foto { object-position: 60% 50%; }
+.local-body { padding: 28px 28px 32px; display: flex; flex-direction: column; flex: 1; }
+.local h3 { font-size: 1.5rem; margin-bottom: 8px; }
+.local-dir { color: var(--gray); font-size: .95rem; }
+.local-desc { margin: 14px 0 20px; }
+.horario { width: 100%; border-collapse: collapse; font-size: .95rem; margin-bottom: 24px; }
+.horario th, .horario td { text-align: left; padding: 7px 0; border-bottom: 1px solid var(--line); font-weight: 400; }
+.horario th { color: var(--gray); width: 40%; }
+.horario tr.today th, .horario tr.today td { color: var(--black); font-weight: 700; }
+.local-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
+@media (max-width: 860px) { .locales-grid { grid-template-columns: 1fr; } }
+
+/* Menu */
+.carta { background: var(--black); color: var(--white); }
+.carta .section-lead { color: var(--gray-light); }
+.carta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; }
+.carta-col h3 { font-size: 1.3rem; padding-bottom: 14px; border-bottom: 2px solid var(--white); margin-bottom: 6px; }
+.carta-col h3:not(:first-child) { margin-top: 36px; }
+.carta-col ul { list-style: none; }
+.carta-col li { padding: 14px 0; border-bottom: 1px solid #2c2c2c; }
+.carta-col b { display: block; font-weight: 500; font-size: 1.08rem; }
+.carta-col span { color: var(--gray-light); font-size: .95rem; }
+@media (max-width: 900px) { .carta-grid { grid-template-columns: 1fr; gap: 12px; } }
+
+/* Sunset band */
+.sunset { position: relative; color: var(--white); padding: 140px 0; overflow: hidden; }
+.sunset-bg { position: absolute; inset: 0; background: url("../fotos/atardecer-puerto.jpg") center 60% / cover no-repeat; }
+.sunset-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.78) 0%, rgba(0,0,0,.35) 70%, rgba(0,0,0,.2) 100%); }
+.sunset-inner { position: relative; }
+.sunset-quote { font-size: clamp(1.6rem, 3.6vw, 2.6rem); font-weight: 500; line-height: 1.2; max-width: 22ch; margin-bottom: 48px; }
+.facts { list-style: none; display: flex; flex-wrap: wrap; gap: 20px 56px; }
+.facts b { display: block; font-size: 3rem; font-weight: 700; line-height: 1; }
+.facts span { color: #e2e2e2; font-size: .95rem; }
+
+/* Reviews */
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 40px; }
+.quote { margin: 0; padding-top: 24px; border-top: 3px solid var(--black); }
+.quote blockquote { font-size: 1.1rem; margin-bottom: 16px; }
+.quote figcaption { color: var(--gray); font-size: .92rem; }
+@media (max-width: 860px) { .quotes { grid-template-columns: 1fr; } }
+
+/* Booking: the logo's black circle */
+.reservar { padding: 40px 0 112px; }
+.reservar-circle { width: min(100%, 640px); aspect-ratio: 1; margin: 0 auto; border-radius: 50%; background: var(--black); color: var(--white); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px; }
+.reservar-circle h2 { margin: 0 auto 14px; max-width: 12ch; }
+.reservar-circle p { color: var(--gray-light); max-width: 34ch; margin-bottom: 28px; }
+.reservar-actions { display: flex; flex-direction: column; gap: 12px; width: min(100%, 300px); }
+@media (max-width: 560px) {
+  .reservar-circle { aspect-ratio: auto; border-radius: 36px; padding: 48px 24px; }
+}
+
+/* Footer */
+.footer { background: var(--black); color: var(--white); padding: 64px 0 28px; }
+.footer-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; padding-bottom: 36px; border-bottom: 1px solid #2c2c2c; }
+.footer-inner img { height: 80px; width: auto; }
+.footer-cols { display: flex; flex-wrap: wrap; gap: 48px; }
+.footer-cols b { display: block; font-size: .9rem; margin-bottom: 8px; }
+.footer-cols p { color: var(--gray-light); font-size: .95rem; }
+.footer-fine { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; padding-top: 22px; color: #8a8a8a; font-size: .82rem; }
+
+/* Floating WhatsApp */
+.wa-float { position: fixed; right: 18px; bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 60; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.wa-btn { width: 60px; height: 60px; border-radius: 50%; border: 0; cursor: pointer; background: #25d366; color: var(--white); display: grid; place-items: center; box-shadow: 0 10px 24px -8px rgba(0, 0, 0, .45); }
+.wa-btn svg { width: 30px; height: 30px; }
+.wa-menu { background: var(--white); border-radius: 18px; box-shadow: 0 12px 30px -10px rgba(0, 0, 0, .35); padding: 8px; display: flex; flex-direction: column; min-width: 170px; }
+.wa-menu a { padding: 12px 16px; border-radius: 12px; text-decoration: none; font-weight: 500; }
+.wa-menu a:hover { background: var(--paper); }
+
+[hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
